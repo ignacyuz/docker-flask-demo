@@ -1,7 +1,7 @@
 pipeline {
     agent any 
     environment {
-    DOCKERHUB_CREDENTIALS = credentials('ignacyuz-dockerhub')
+    DOCKERHUB_CREDENTIALS = credentials('dhubaccess')
     }
     stages { 
 
@@ -17,7 +17,7 @@ pipeline {
         }
         stage('push image') {
             steps{
-                sh 'docker push ignacyuz/flaskapp:$BUILD_NUMBER'
+                sh 'docker push ignacyuz/flaskapp:$BUILD_NUMBER .'
             }
         }
 }
