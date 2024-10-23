@@ -7,7 +7,7 @@ pipeline {
 
         stage('Build docker image') {
             steps {  
-                sh 'docker build -t ignacyuz/flaskapp:$BUILD_NUMBER .'
+                sh 'docker build -t ignacyuz/flaskapp:latest .'
             }
         }
         stage('login to dockerhub') {
@@ -17,7 +17,7 @@ pipeline {
         }
         stage('push image') {
             steps{
-                sh 'docker push ignacyuz/flaskapp:$BUILD_NUMBER'
+                sh 'docker push ignacyuz/flaskapp:latest'
             }
         }
 }
