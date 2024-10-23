@@ -17,7 +17,7 @@ pipeline {
         }
         stage('push image') {
             steps{
-                sh 'docker push ignacyuz/flaskapp:$BUILD_NUMBER .'
+                sh 'docker push ignacyuz/flaskapp:$BUILD_NUMBER'
             }
         }
 }
